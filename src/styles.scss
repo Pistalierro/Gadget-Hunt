@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use "styles/fonts" as *;
+@use "styles/typography" as *;
+@use "styles/common" as *;
+@use "styles/buttons" as *;
+@use "styles/forms" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
