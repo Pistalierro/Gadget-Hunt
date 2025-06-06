@@ -1,0 +1,10 @@
+{
+  "HEADER": {
+    "CATALOG": "Каталог",
+    "CART": "Кошик",
+    "SEARCH": {
+      "BUTTON": "Пошук",
+      "PLACEHOLDER": "Я шукаю..."
+    }
+  }
+}

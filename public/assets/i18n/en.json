@@ -1,0 +1,10 @@
+{
+  "HEADER": {
+    "CATALOG": "Catalog",
+    "CART": "Cart",
+    "SEARCH": {
+      "BUTTON": "Search",
+      "PLACEHOLDER": "I'm looking for..."
+    }
+  }
+}

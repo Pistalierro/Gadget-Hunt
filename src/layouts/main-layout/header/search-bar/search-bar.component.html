@@ -1,1 +1,27 @@
-<p>search-bar works!</p>
+<div class="flex flex-1 items-center w-full max-w-3xl bg-white overflow-hidden h-12 rounded-lg">
+
+  <!-- Лупа -->
+  <div class="pl-3 text-gray-400">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M21 21l-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- Input -->
+  <input
+    [placeholder]="'HEADER.SEARCH.PLACEHOLDER' | translate"
+    class="flex-1 px-3 py-2 text-base text-gray-900 focus:outline-none"
+    type="text"
+  />
+
+  <button aria-label="Голосовий пошук" class="px-2 text-gray-500 hover:text-red-500 transition" type="button">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M12 1a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v1a7 7 0 0 1-14 0v-1M12 21v-4"/>
+    </svg>
+  </button>
+
+  <button class="btn btn-primary bg-green-600" type="submit">{{ 'HEADER.SEARCH.BUTTON' | translate }}</button>
+
+</div>
+
