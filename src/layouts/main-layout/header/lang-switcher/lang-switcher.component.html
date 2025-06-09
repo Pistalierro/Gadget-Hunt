@@ -1,0 +1,39 @@
+<div class="relative">
+  <button
+    (click)="toggleDropdown()"
+    aria-label="Language selection"
+    class="px-3 h-12 rounded text-3xl text-white flex items-center gap-2"
+  >
+    {{ getLangLabel(currentLang()) }}
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path clip-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+            fill-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <ul
+    *ngIf="showDropdown()"
+    class="absolute right-0 mt-1 w-24 bg-white text-black rounded-lg shadow-md py-1 z-10"
+  >
+    <li
+      (click)="switchLang(lang.code)"
+      *ngFor="let lang of languages"
+      class="px-3 py-2 flex items-center justify-between hover:bg-gray-200 cursor-pointer"
+    >
+      <span class="text-lg">{{ lang.label }}</span>
+      <svg
+        *ngIf="lang.code === currentLang()"
+        class="w-4 h-4 text-green-600"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8.086 8.086a1 1 0 01-1.414 0L3.293 10.88a1 1 0 111.414-1.414l3.086 3.086 7.379-7.379a1 1 0 011.414 0z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </li>
+  </ul>
+</div>
