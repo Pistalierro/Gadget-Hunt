@@ -2,7 +2,7 @@
   <button
     (click)="toggleDropdown()"
     aria-label="Language selection"
-    class="px-3 h-12 rounded text-3xl text-white flex items-center gap-2"
+    class="px-3 h-12 rounded text-3xl flex items-center gap-2 btn btn-outline"
   >
     {{ getLangLabel(currentLang()) }}
     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -14,7 +14,7 @@
 
   <ul
     *ngIf="showDropdown()"
-    class="absolute right-0 mt-1 w-24 bg-white text-black rounded-lg shadow-md py-1 z-10"
+    class="absolute right-0 mt-1 w-24 bg-white  text-black rounded-lg shadow-md py-1 z-10"
   >
     <li
       (click)="switchLang(lang.code)"

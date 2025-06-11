@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output, signal} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {NgIf} from '@angular/common';
 
 @Component({
@@ -11,15 +11,30 @@ import {NgIf} from '@angular/common';
 })
 export class AuthModalComponent {
 
-  @Output() close = new EventEmitter<void>();
-
   activeTab = signal<'login' | 'register'>('login');
+  isOpen = signal<boolean>(false);
+
+  get showModal(): boolean {
+    return this.isOpen();
+  }
+
+  get currentTab() {
+    return this.activeTab();
+  }
+
+  open(): void {
+    this.isOpen.set(true);
+  }
+
+  close(): void {
+    this.isOpen.set(false);
+  }
 
   switchTab(tab: 'login' | 'register') {
     this.activeTab.set(tab);
   }
 
-  handleActionClick() {
-    this.close.emit();
+  handleActionClick(): void {
+    this.close();
   }
 }

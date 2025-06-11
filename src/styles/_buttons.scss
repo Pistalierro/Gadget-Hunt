@@ -7,7 +7,7 @@
 }
 
 .btn-outline {
-  @apply border border-white text-neutral-300 hover:bg-white/20;
+  @apply border border-white text-neutral-200 hover:bg-white/20 hover:text-white border-none;
 }
 
 .btn-icon {

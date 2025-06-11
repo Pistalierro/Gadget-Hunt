@@ -3,7 +3,7 @@ import {SearchBarComponent} from './search-bar/search-bar.component';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {LangSwitcherComponent} from './lang-switcher/lang-switcher.component';
 import {AuthModalComponent} from './auth-modal/auth-modal.component';
-import {NgIf} from '@angular/common';
+import {BasketComponent} from './basket/basket.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ import {NgIf} from '@angular/common';
     LangSwitcherComponent,
     TranslatePipe,
     AuthModalComponent,
-    NgIf
+    BasketComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
