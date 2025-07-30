@@ -8,7 +8,7 @@ import {RouterOutlet} from '@angular/router';
   imports: [
     HeaderComponent,
     FooterComponent,
-    RouterOutlet
+    RouterOutlet,
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss'

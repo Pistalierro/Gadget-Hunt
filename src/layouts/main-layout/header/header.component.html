@@ -1,11 +1,11 @@
-<header class="header bg-dark w-full h-20" id="header">
-  <div class="header__container max-w-screen-xl mx-auto p-4 flex items-center justify-between gap-5 h-full">
+<header class="header bg-dark w-full h-20 px-4 sm:px-6 lg:px-8" id="header">
+  <div class="header__container max-w-screen-2xl mx-auto  flex items-center justify-between gap-5 h-full">
 
     <div class="header__menu">
       <button
-        (click)="toggleMenu()"
+        (click)="ui.toggleMenu()"
         aria-label="Відкрити меню"
-        class="w-16 h-16 flex items-center justify-center btn btn-outline border-none"
+        class="w-14 h-14 flex items-center justify-center btn btn-outline"
         type="button">
 
         <svg class="text-white" fill="currentColor" height="100%" viewBox="0 0 100 80" width="100%"
@@ -18,20 +18,25 @@
       </button>
     </div>
 
-    <div class="header__logo">
+    <div class="header__logo hidden sm:flex">
       <a class="flex items-center gap-2 text-neutral-200 hover:text-white duration-200  font-bold text-xl" href="/">
-        <div class="bg-green-500 rounded-full w-9 h-9 flex items-center justify-center text-black font-semibold text-sm">
-          😊
+        <div class="w-9 h-9 relative">
+          <img
+            alt="Rozetka Logo"
+            class="w-full h-full object-contain"
+            fetchpriority="high"
+            loading="eager"
+            src="https://content1.rozetka.com.ua/mb_logo/image_site_mini_logo/original/555588633.svg">
         </div>
-        <span class="tracking-wide">GadgetHunt</span>
+        <span class="tracking-wide text-white font-bold text-xl hidden xl:flex">GadgetHunt</span>
       </a>
     </div>
 
-    <div class="header__catalog">
+    <div class="header__catalog hidden lg:flex">
       <button
-        (click)="toggleCatalog()"
+        (click)="ui.toggleCatalog()"
         aria-label="Каталог товарів"
-        class="btn btn-outline flex items-center justify-between min-w-[150px]"
+        class="btn btn-outline flex items-center justify-between min-w-[150px] border border-white"
         type="button">
 
         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -45,15 +50,15 @@
       </button>
     </div>
 
-    <div class="header__search flex-grow">
+    <div class="header__search flex-1 min-w-0 max-w-[800px]">
       <app-search-bar></app-search-bar>
     </div>
 
     <ul class="header__actions-list flex items-center gap-1">
-      <li class="header__actions-item">
+      <li class="header__actions-item hidden lg:flex">
         <app-lang-switcher></app-lang-switcher>
       </li>
-      <li class="header__actions-item">
+      <li class="header__actions-item hidden md:flex">
         <app-auth-modal></app-auth-modal>
       </li>
       <li class="header__actions-item">

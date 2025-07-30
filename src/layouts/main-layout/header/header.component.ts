@@ -1,9 +1,10 @@
-import {Component, inject, signal} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 import {LangSwitcherComponent} from './lang-switcher/lang-switcher.component';
 import {AuthModalComponent} from './auth-modal/auth-modal.component';
 import {BasketComponent} from './basket/basket.component';
+import {UiService} from '../../../shared/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -19,28 +20,7 @@ import {BasketComponent} from './basket/basket.component';
 })
 export class HeaderComponent {
 
-  isMenuOpen = signal<boolean>(false);
-  isCatalogOpen = signal<boolean>(false);
-  showAuthModal = signal<boolean>(false);
-
+  ui = inject(UiService);
   translate = inject(TranslateService);
-
-  toggleMenu(): void {
-    this.isMenuOpen.update(open => !open);
-    console.log('Menu is now', this.isMenuOpen());
-  }
-
-  toggleCatalog(): void {
-    this.isCatalogOpen.update(open => !open);
-    console.log('Каталог открыт?', this.isCatalogOpen());
-  }
-
-  openAuthModal(): void {
-    this.showAuthModal.set(true);
-  }
-
-  closeAuthModal(): void {
-    this.showAuthModal.set(false);
-  }
 
 }

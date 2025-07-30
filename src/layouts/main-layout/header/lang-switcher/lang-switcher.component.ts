@@ -18,8 +18,8 @@ export class LangSwitcherComponent {
   currentLang = signal(this.translate.currentLang || this.translate.getDefaultLang());
 
   languages = [
-    {code: 'ua', label: '🇺🇦', name: 'ua'},
-    {code: 'en', label: '🇬🇧', name: 'en'},
+    {code: 'ua', icon: '/image/flags_svg/ua.svg', name: 'Українська'},
+    {code: 'en', icon: '/image/flags_svg/gb.svg', name: 'English'}
   ];
 
   showDropdown = signal<boolean>(false);
@@ -36,6 +36,6 @@ export class LangSwitcherComponent {
   }
 
   getLangLabel(langCode: string): string {
-    return this.languages.find(l => l.code === langCode)?.label || '🌐';
+    return this.languages.find(l => l.code === langCode)?.icon || '🌐';
   }
 }

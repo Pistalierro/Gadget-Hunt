@@ -1,17 +1,22 @@
 <button
-  (click)="open()"
+  (click)="ui.openAuthModal()"
   aria-label="Увійти"
-  class="btn btn-outline">
-  <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5"
+  class="w-12 h-12 flex items-center justify-center rounded-lg hover:bg-white/20 duration-200ß">
+  <svg class="w-12 h-12 block text-white" fill="none" stroke="currentColor" stroke-width="1.5"
        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M5.121 17.804A8 8 0 0112 15a8 8 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
           stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </button>
 
-<!-- 🧊 Модалка появляется по флагу -->
-<div *ngIf="showModal" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
-  <div class="bg-white rounded-lg shadow-xl w-[90%] max-w-md p-6 relative">
+<!-- Модалка по флагу -->
+<div (click)="handleBackdropClick()"
+     *ngIf="showModal"
+     class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+
+  <!-- Модалка (НЕ ловит клик) -->
+  <div (click)="$event.stopPropagation()"
+       class="bg-white rounded-xl shadow-2xl w-[90%] max-w-md p-6 relative">
 
     <!-- Крестик -->
     <button

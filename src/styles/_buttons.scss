@@ -3,11 +3,11 @@
 }
 
 .btn-primary {
-  @apply text-white hover:bg-green-700;
+  @apply text-white hover:bg-green-500 duration-200;
 }
 
 .btn-outline {
-  @apply border border-white text-neutral-200 hover:bg-white/20 hover:text-white border-none;
+  @apply text-neutral-200 hover:bg-white/20 hover:text-white;
 }
 
 .btn-icon {
